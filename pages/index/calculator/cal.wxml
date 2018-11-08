@@ -4,31 +4,31 @@
   <view class='btnGroup'>
     <button class='item orange'hover-class='other-butten-hover' id='{{id1}}'bindtap='clickButton'>历史</button>
     <button class='item orange'hover-class='other-butten-hover' id='{{id2}}'bindtap='clickButton'>C</button>
-    <button class='item orange'hover-class='other-butten-hover' id='{{id3}}'bindtap='clickButton'>-</button>
+    <button class='item orange'hover-class='other-butten-hover' id='{{id3}}'bindtap='clickButton'>~</button>
     <button class='item orange'hover-class='other-butten-hover' id='{{id4}}'bindtap='clickButton'>/</button>
   </view>
   <view class='btnGroup'>
-    <button class='item blue'hover-class='other-butten-num' id='{{id5}}'bindtap='clickButton'>7</button>
-    <button class='item blue'hover-class='other-butten-num' id='{{id6}}'bindtap='clickButton'>8</button>
-    <button class='item blue'hover-class='other-butten-num' id='{{id7}}'bindtap='clickButton'>9</button>
+    <button class='item blue'hover-class='butten-havor-num' id='{{id5}}'bindtap='clickButton'>7</button>
+    <button class='item blue'hover-class='butten-havor-num' id='{{id6}}'bindtap='clickButton'>8</button>
+    <button class='item blue'hover-class='butten-havor-num' id='{{id7}}'bindtap='clickButton'>9</button>
     <button class='item orange'hover-class='other-butten-hover' id='{{id8}}'bindtap='clickButton'>*</button>
   </view>
   <view class='btnGroup'>
-    <button class='item blue'hover-class='other-butten-num' id='{{id5}}'bindtap='clickButton'>7</button>
-    <button class='item blue'hover-class='other-butten-num' id='{{id6}}'bindtap='clickButton'>8</button>
-    <button class='item blue'hover-class='other-butten-num' id='{{id7}}'bindtap='clickButton'>9</button>
-    <button class='item orange'hover-class='other-butten-hover' id='{{id8}}'bindtap='clickButton'>*</button>
+    <button class='item blue'hover-class='butten-havor-num' id='{{id9}}'bindtap='clickButton'>4</button>
+    <button class='item blue'hover-class='butten-havor-num' id='{{id10}}'bindtap='clickButton'>5</button>
+    <button class='item blue'hover-class='butten-havor-num' id='{{id11}}'bindtap='clickButton'>6</button>
+    <button class='item orange'hover-class='other-butten-hover' id='{{id12}}'bindtap='clickButton'>-</button>
   </view>
   <view class='btnGroup'>
-    <button class='item blue'hover-class='other-butten-num' id='{{id5}}'bindtap='clickButton'>7</button>
-    <button class='item blue'hover-class='other-butten-num' id='{{id6}}'bindtap='clickButton'>8</button>
-    <button class='item blue'hover-class='other-butten-num' id='{{id7}}'bindtap='clickButton'>9</button>
-    <button class='item orange'hover-class='other-butten-hover' id='{{id8}}'bindtap='clickButton'>*</button>
+    <button class='item blue'hover-class='butten-havor-num' id='{{id13}}'bindtap='clickButton'>1</button>
+    <button class='item blue'hover-class='butten-havor-num' id='{{id14}}'bindtap='clickButton'>2</button>
+    <button class='item blue'hover-class='butten-havor-num' id='{{id15}}'bindtap='clickButton'>3</button>
+    <button class='item orange'hover-class='other-butten-hover' id='{{id16}}'bindtap='clickButton'>+</button>
   </view>
   <view class='btnGroup'>
-    <button class='item blue'hover-class='other-butten-num' id='{{id5}}'bindtap='clickButton'>7</button>
-    <button class='item blue'hover-class='other-butten-num' id='{{id6}}'bindtap='clickButton'>8</button>
-    <button class='item blue'hover-class='other-butten-num' id='{{id7}}'bindtap='clickButton'>9</button>
-    <button class='item orange'hover-class='other-butten-hover' id='{{id8}}'bindtap='clickButton'>*</button>
+    <button class='item orange'hover-class='other-butten-num' id='{{id17}}'bindtap='clickButton'>+_</button>
+    <button class='item blue'hover-class='butten-havor-num' id='{{id18}}'bindtap='clickButton'>0</button>
+    <button class='item orange'hover-class='other-butten-num' id='{{id19}}'bindtap='clickButton'>.</button>
+    <button class='item orange'hover-class='other-butten-hover' id='{{id20}}'bindtap='clickButton'>=</button>
   </view>
 </view>
