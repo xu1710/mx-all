@@ -1,0 +1,9 @@
+<!--pages/index/calculator/history/his.wxml-->
+<view class="page">
+  <scroll-view class='items'scroll-y style="height: 200px;">
+    <block wx:for="{{exp}}">
+      <view>{{item}}</view>
+    </block>
+  </scroll-view>
+  <button class='btn-his' bindtap='btnclick' id='cleanbtn' hover-class='butten-hover'>clean</button>
+</view>

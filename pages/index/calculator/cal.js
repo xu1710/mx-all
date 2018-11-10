@@ -1,5 +1,11 @@
 // pages/index/calculator/cal.js
 
+var save = function(e) {
+  var ep = wx.getStorageSync("cal-his") || []
+  ep.unshift(e);
+  wx.setStorageSync('cal-his', ep);
+}
+
 var cal = function(a, x, c) {
   var data;
   a = parseFloat(a);
@@ -63,70 +69,84 @@ Page({
     var lastoper1 = this.data.lastoper;
     var noNumFlag = this.data.flag;
     var expr1 = this.data.expr;
+    var shuju = '';
 
     if (e.target.id >= 'num_0' && e.target.id <= 'num_9') {
       data += e.target.id.split("_")[1];
       if (this.data.re == '0' || noNumFlag) {
         data = e.target.id.split('_')[1];
       }
+      shuju = data;
       noNumFlag = false;
     } else if (e.target.id == "dot") {
       if (data.toString().indexOf(".") == -1) {
         data += ".";
-      } else if (e.target.id == "back") {
-        if (data.toString().length > 1) {
-          data += data.substr(o, data.toString().length - 1);
-        } else {
-          data = 0;
-        }
+        shuju = data;
+      }
+    } else if (e.target.id == "back") {
+      if (data.toString().length > 1) {
+        data = data.substr(0, data.toString().length - 1);
+      } else {
+        data = 0;
+      }
+      shuju = data;
+    } else {
+      noNumFlag = true;
+      console.log(e.target.id);
+      if (e.target.id == "clear") {
+        expr1 = "";
+        data = 0;
+        tmp = 0;
+        lastoper1 = "+";
+        shuju = data;
+      } else if (e.target.id == "negative") {
+        data = -1 * data;
+        shuju = data;
+      } else if (e.target.id == "history") {
+        wx.navigateTo({
+          url: 'history/his',
+        })
       } else if (e.target.id == "div") {
-        expr1+=data.toString()+"/";
-          data =cal(tmp,lastoper1,data);
-          tmp=data;
-          lastoper1="/";
+        expr1 += data.toString() + "/";
+        data = cal(tmp, lastoper1, data);
+        shuju = data + '/';
+        tmp = data;
+        lastoper1 = "/";
       } else if (e.target.id == "mul") {
         expr1 += data.toString() + "*";
         data = cal(tmp, lastoper1, data);
+        shuju = data + '*';
         tmp = data;
         lastoper1 = "*";
       } else if (e.target.id == "sub") {
         expr1 += data.toString() + "-";
         data = cal(tmp, lastoper1, data);
+        shuju = data + '-';
         tmp = data;
         lastoper1 = "-";
       } else if (e.target.id == "add") {
         expr1 += data.toString() + "+";
         data = cal(tmp, lastoper1, data);
+        shuju = data + '+';
         tmp = data;
         lastoper1 = "+";
       } else if (e.target.id == "equ") {
         expr1 += data.toString() + "=";
         data = cal(tmp, lastoper1, data);
+        shuju = '=' + data;
+        expr1 += data;
+        save(expr1);
+        expr1 = '';
         tmp = data;
         lastoper1 = "+";
-      } else{
-        noNumFlag=true;
-        console.log(e.target.id);
-        if (e.target.id=="clear"){
-          expr1="";
-          data=0;
-          tmp=0;
-          lastoper1="+";
-        } else if(e.target.id=="negative"){
-          data=-1*data;
-        }else if (e.target.id=="history"){
-          wx.navigateTo({
-            url: '../history/history',
-          })
-        }
       }
     }
     this.setData({
-      re:data,
-      lastoper:lastoper1,
-      temp:tmp,
-      flag:noNumFlag,
-      expr:expr1
+      re: shuju,
+      lastoper: lastoper1,
+      temp: tmp,
+      flag: noNumFlag,
+      expr: expr1
     })
   },
 
@@ -135,7 +155,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-      
+
   },
 
   /**
